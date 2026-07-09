@@ -1,0 +1,103 @@
+#  Microservices with Spring Boot – Hands-on
+
+##  Project Overview
+
+In this hands-on project, I created two microservices using Spring Boot:
+
+- **Account Service**
+- **Loan Service**
+
+The objective of this exercise was to understand how microservices work and how they communicate with each other using REST APIs.
+
+---
+
+##  Technologies Used
+
+- Java  
+- Spring Boot  
+- REST APIs  
+- Maven  
+- IntelliJ IDEA  
+
+---
+
+##  Project Structure
+
+
+Deep-Skilling-Hands-On
+└── Microservices with Spring Boot 3 and Spring Cloud
+└── Creating Microservices for account and loan
+├── account
+└── loan
+
+
+---
+
+##  Microservices Details
+
+###  Loan Microservice
+
+- Runs on port **8081**
+- Provides loan details based on loan number
+
+**Endpoint:**
+
+GET /loans/{number}
+
+
+**Sample Response:**
+```json
+{
+  "number": "H00987987972342",
+  "type": "car",
+  "loan": 400000,
+  "emi": 3258,
+  "tenure": 18
+}
+ Account Microservice
+Runs on port 8080
+Calls Loan microservice using RestTemplate
+
+Endpoint:
+
+GET /accounts/{number}
+
+Sample Response:
+
+{
+  "accountNumber": "H00987987972342",
+  "loanDetails": {
+    "number": "H00987987972342",
+    "type": "car",
+    "loan": 400000,
+    "emi": 3258,
+    "tenure": 18
+  }
+}
+## Communication Between Services
+Account service calls Loan service using:
+RestTemplate.getForObject()
+Loan service must be running before calling Account service.
+
+## Challenges Faced
+Initial folder structure issues (nested folders)
+Port conflicts between services
+"Connection refused" error when Loan service was not running
+Java file naming issue (public class must match file name)
+
+## Key Learnings
+Basics of microservices architecture
+Creating REST APIs using Spring Boot
+Inter-service communication using RestTemplate
+Handling common runtime errors
+Importance of proper project structure
+
+## How to Run the Project
+Run Loan Service on port 8081
+Run Account Service on port 8080
+Open browser and test:
+http://localhost:8080/accounts/H00987987972342
+
+## Conclusion
+
+This hands-on helped me understand how microservices interact with each other. I learned how to build independent services and connect them using REST APIs. I also gained experience in debugging common issues during development.
