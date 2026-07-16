@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# 7ReactJS-HOL – Shopping Cart using Props
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Objective
 
-## Available Scripts
+- Define Props in React
+- Explain Default Props
+- Identify differences between State and Props
+- Use ReactDOM.render()
+- Implement a simple Online Shopping Cart using Props
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Theory
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### What are Props?
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Props (short for Properties) are used in React to pass data from one component to another.  
+They are read-only and help in making components reusable.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Default Props
 
-### `npm run build`
+Default Props are used to assign default values to props if no value is passed.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Example:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```javascript
+Component.defaultProps = {
+  name: "Guest"
+};
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Difference Between State and Props
+Props	State
+Passed from parent	Managed inside component
+Immutable (read-only)	Mutable
+Used for communication	Used for data handling
+ ReactDOM.render()
 
-### `npm run eject`
+Used to render React components into the DOM.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Implementation
+ Steps
+Created React application named shoppingapp (prop-app)
+Created components:
+OnlineShopping
+Cart
+Created an array of items with:
+Name
+Price
+Passed data using Props
+Used .map() to loop through items
+Displayed data in table format
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Project Structure
+src/
+ ├── components/
+ │    ├── OnlineShopping.js
+ │    └── Cart.js
+ ├── App.js
+ └── index.js
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Output
+Displays heading: Items Ordered
+Shows a table with Name and Price
+Items displayed:
+Laptop – 80000
+TV – 120000
+Washing Machine – 50000
+Mobile – 30000
+Fridge – 70000
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Conclusion
+Learned Props in React
+Passed data between components
+Used map() to render list
+Built a simple shopping cart UI
+```
