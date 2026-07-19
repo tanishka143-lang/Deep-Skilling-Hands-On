@@ -1,10 +1,10 @@
-package com.cognizant.spring_learn;
+package com.example.country_service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringLearnApplicationTests {
+class CountryServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
