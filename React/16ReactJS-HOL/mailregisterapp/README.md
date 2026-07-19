@@ -1,5 +1,4 @@
 # 16ReactJS-HOL – Mail Registration App
-
 ---
 
 ## Objectives
